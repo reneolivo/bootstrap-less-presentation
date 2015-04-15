@@ -1,0 +1,122 @@
+@color1: #333 - 50%;
+@color2: #999;
+@color3: #666666;
+@bgColor1: #FBFBFB;
+@bgColor2: #727E79;
+
+.radio(@radio : 10px) {
+	-webkit-border-radius: @radio;
+	-moz-border-radius: @radio;
+	border-radius: @radio;
+}
+
+.windows95 {
+	@border: 3px solid;
+	@top: #CCC;
+	@bgContent: #AAA;
+	@bottom: #999;
+
+	padding: 10px;
+	border-top: @border @top;
+	border-left: @border @top;
+	border-bottom: @border @bottom;
+	border-right: @border @bottom;
+	background: @bgContent;
+}
+
+
+body {
+	margin: 0;
+	padding: 0;
+	line-height: 2em;
+	font-family: Tahoma;
+	font-size: 16px;
+	color: @color3;
+	background: @bgColor1;
+
+	a {
+		color: @color2;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+#wrapper {
+	margin: 0 auto;
+	width: 1170px;
+}
+
+#main-header {
+	padding: 1em 0 0.5em 0;
+	border-bottom: 2px solid @color3;
+
+	h1 {
+		color: @color1;
+		margin: 0;
+	}
+
+	h2 {
+		color: @color1 + 50%;
+		margin: 0;
+	}
+}
+
+#content {
+	margin: 0 -15px;
+
+	h3 {
+		margin-top: 0;
+		margin-bottom: 1em;
+	}
+
+	#main-content {
+		float: left;
+		padding: 0 15px;
+		width: 60%;
+	}
+
+	#side-bar {
+		float: left;
+		padding: 0 15px;
+		width: 30%;
+	}
+
+	#content-footer {
+		clear: both;
+		padding: 0 15px;
+		width: 60%;
+
+		ul.tech {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+
+			li {
+				float: left;
+				margin: 0 2.5%;
+				padding-top: 20px;
+				width: 20%;
+				height: 55px;
+				text-align: center;
+				font-size: larger;
+				background: @color3 + 100%;
+
+				.radio( 50px );
+			}
+
+			li:first-child {
+				margin-left: 0;
+			}
+		}
+	}
+}
+
+#main-footer {
+	clear: both;
+	margin-top: 100px;
+	padding-top: 0.5em;
+	border-top: 1px solid @color3;
+}

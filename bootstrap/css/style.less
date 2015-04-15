@@ -1,0 +1,111 @@
+// Core variables and mixins
+@import "../bower_components/bootstrap/less/variables.less";
+@import "../bower_components/bootstrap/less/mixins.less";
+
+// Reset and dependencies
+@import "../bower_components/bootstrap/less/normalize.less";
+
+// Core CSS
+@import "../bower_components/bootstrap/less/scaffolding.less";
+@import "../bower_components/bootstrap/less/type.less";
+@import "../bower_components/bootstrap/less/code.less";
+@import "../bower_components/bootstrap/less/grid.less";
+
+// Utility classes
+@import "../bower_components/bootstrap/less/utilities.less";
+@import "../bower_components/bootstrap/less/responsive-utilities.less";
+
+// Navs
+@import "../bower_components/bootstrap/less/navs.less";
+
+// Color pallete:
+//@brand-primary: #DD4814;
+
+body {
+	line-height: 2em;
+	color: #555;
+	background: #FBFBFB;
+}
+
+#wrapper {
+	.container();
+}
+
+#main-header,
+#content,
+#main-footer {
+	.make-row();
+}
+
+.skip-to-content {
+	.sr-only();
+	.sr-only-focusable();
+
+	margin: 1em 0;
+	font-weight: bold;
+}
+
+#main-header {
+	padding: 1em 0;
+
+	h1 {
+		margin: 0;
+		color: @brand-primary;
+	}
+
+	h2 {
+		margin: 0;
+		font-size: 180%;
+		color: lighten( @brand-primary, 15% );
+	}
+
+	nav.menu ul {
+		.nav();
+		.nav-tabs();
+		margin-top: 2em;
+	}
+}
+
+#content {
+	#main-content {
+		.make-md-column( 8 );
+	}
+
+	#side-bar {
+		.make-md-column( 4 );
+	}
+
+	#content-footer {
+		.make-md-column( 8 );
+
+		ul.tech {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+
+			li {
+				.make-md-column(2);
+				.make-md-column-offset( 1);
+				.border-top-radius( 10px );
+				.border-bottom-radius( 10px );
+
+				padding-top: 20px;
+				height: 65px;
+				text-align: center;
+				font-size: larger;
+				color: white;
+				background: lighten( @gray-light, 20% );
+
+				&:nth-child( 1 ) {
+					margin-left: 0;
+				}
+			}
+		}
+	}
+}
+
+#main-footer {
+	margin-top: 1em;
+	padding: 1em 0;
+	border-top: 1px solid #999;
+}
